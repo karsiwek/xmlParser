@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class XmlParser {
-    private static String NODE_PATTERN = "<([\\w-]+)((?: +[\\w-]+=(\'|\")[\\w-]+\\3)*)>(.*)<\\/\\1>";
+    private static String NODE_PATTERN = "<([\\w-]+)((?: +[\\w-]+=(\'|\")[\\w-]+\\3)*)>(.*?)<\\/\\1>";
     private static String ATTRIBUTES_PATTERN = "([\\w-]+)=(\'|\")([\\w-]+)\\2";
 
     public Optional<XmlNode> parseNode(String xml) {

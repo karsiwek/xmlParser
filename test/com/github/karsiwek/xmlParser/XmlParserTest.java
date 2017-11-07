@@ -58,4 +58,15 @@ class XmlParserTest {
         assertThat(result.get().getChildren().get(0).getAttributes().get("attr"), is("somthing"));
         assertThat(result.get().getChildren().get(1).getName(), is("test3"));
     }
+
+    @Test
+    void WhenParseSingleNodeWithTwoNodesInside_ShouldReturnObjectWithNodeWithTwoChildren() {
+        Optional<XmlNode> result = parser.parseNode("<test><test2></test2><test2></test2></test>");
+
+        assertThat(result.isPresent(), is(true));
+        assertThat(result.get().getName(), is("test"));
+        assertThat(result.get().getChildren().size(), is(2));
+        assertThat(result.get().getChildren().get(0).getName(), is("test2"));
+        assertThat(result.get().getChildren().get(1).getName(), is("test2"));
+    }
 }

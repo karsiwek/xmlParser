@@ -5,14 +5,13 @@ import java.util.List;
 import java.util.Map;
 
 public class XmlNode {
-    String name;
+    private String name;
     private Map<String, String> attributes;
     private List<XmlNode> children = new ArrayList<>();
 
     public String getName() {
         return name;
     }
-
 
     public Map<String, String> getAttributes() {
         return attributes;
@@ -22,15 +21,15 @@ public class XmlNode {
         return children;
     }
 
-    void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
 
-    void setAttributes(Map<String, String> attributes) {
+    private void setAttributes(Map<String, String> attributes) {
         this.attributes = attributes;
     }
 
-    void setChildren(List<XmlNode> children) {
+    private void setChildren(List<XmlNode> children) {
         this.children = children;
     }
 
